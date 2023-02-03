@@ -6,12 +6,12 @@
 
 ## Инициализация
 ```cpp
-Segmentor segment(A, B, C, D, E, F, G, 1Seg, 2Seg, 3Seg, 4Seg); //инициализация A-G пины сегментника, 1Seg-4Seg пины включения на каждый сегмент
-//в случае, если у вас индикаторов 1
-Segmentor segment(A, B, C, D, E, F, G, 1Seg);
-// Та же ситуация для 2-ух и 3-ех индикаторов
-//Также если вам необходимы только световые пины индикатора:
-Segmentor segment(A, B, C, D, E, F, G, 1Seg, 2Seg, 3Seg, 4Seg);
+Segmentor segment(A, B, C, D, E, F, G); //инициализация A-G пины сегментника
+segment.disgarge(1sig);// обязательная функция инициализации разрядов, писать данную функцию в setup()
+segment.disgarge(1sig, 2sig);//если у вас 2-х разрядный сегментник
+segment.disgarge(1sig, 2sig, 3sig);//3-х разрядный
+segment.disgarge(1sig, 2sig, 3sig, 4sig);//4-х разрядный
+
 ```
 ## Использование
 ```cpp
