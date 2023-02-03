@@ -14,7 +14,6 @@ class Segmentor{
 	int _secondSeg;
 	int _thirdSeg;
 	int _fourSeg;
-	int _fiveSeg;
   public:
     Segmentor(int pinA, int pinB, int pinC, int pinD, int pinE, int pinF, int pinG){
       pinMode(pinA, OUTPUT);
@@ -39,103 +38,53 @@ class Segmentor{
       _pinF = pinF;
       _pinG = pinG;
     }
-	Segmentor(int pinA, int pinB, int pinC, int pinD, int pinE, int pinF, int pinG, int first, int second){
-	  pinMode(pinA, OUTPUT);
-      pinMode(pinB, OUTPUT);
-      pinMode(pinC, OUTPUT);
-      pinMode(pinD, OUTPUT);
-      pinMode(pinE, OUTPUT);
-      pinMode(pinF, OUTPUT);
-      pinMode(pinG, OUTPUT);
-	  pinMode(first, OUTPUT);
-	  pinMode(second, OUTPUT);
-      digitalWrite(pinA, LOW);
-      digitalWrite(pinB, LOW);
-      digitalWrite(pinC, LOW);
-      digitalWrite(pinD, LOW);
-      digitalWrite(pinE, LOW);
-      digitalWrite(pinF, LOW);
-      digitalWrite(pinG, LOW);
-	  digitalWrite(first, LOW);
-	  digitalWrite(second, LOW);
-      _pinA = pinA;
-      _pinB = pinB;
-      _pinC = pinC;
-      _pinD = pinD;
-      _pinE = pinE;
-      _pinF = pinF;
-      _pinG = pinG;
-	  _firstSeg = first;
-	  _secondSeg = second;
+	void discharge(int first){
+		pinMode(first, OUTPUT);
+		digitalWrite(first, LOW);
+		_firstSeg = first;
 	}
-	Segmentor(int pinA, int pinB, int pinC, int pinD, int pinE, int pinF, int pinG, int first, int second, int third){
-	  pinMode(pinA, OUTPUT);
-      pinMode(pinB, OUTPUT);
-      pinMode(pinC, OUTPUT);
-      pinMode(pinD, OUTPUT);
-      pinMode(pinE, OUTPUT);
-      pinMode(pinF, OUTPUT);
-      pinMode(pinG, OUTPUT);
-	  pinMode(first, OUTPUT);
-	  pinMode(second, OUTPUT);
-	  pinMode(third, OUTPUT);
-      digitalWrite(pinA, LOW);
-      digitalWrite(pinB, LOW);
-      digitalWrite(pinC, LOW);
-      digitalWrite(pinD, LOW);
-      digitalWrite(pinE, LOW);
-      digitalWrite(pinF, LOW);
-      digitalWrite(pinG, LOW);
-	  digitalWrite(first, LOW);
-	  digitalWrite(second, LOW);
-	  digitalWrite(third, LOW);
-      _pinA = pinA;
-      _pinB = pinB;
-      _pinC = pinC;
-      _pinD = pinD;
-      _pinE = pinE;
-      _pinF = pinF;
-      _pinG = pinG;
-	  _firstSeg = first;
-	  _secondSeg = second;
-	  _thirdSeg = third;
+	void discharge(int first, int second){
+		pinMode(first, OUTPUT);
+		digitalWrite(first, LOW);
+		_firstSeg = first;
+		pinMode(second, OUTPUT);
+		digitalWrite(second, LOW);
+		_secondSeg = second;
 	}
-	Segmentor(int pinA, int pinB, int pinC, int pinD, int pinE, int pinF, int pinG, int first, int second, int third, int four){
-	  pinMode(pinA, OUTPUT);
-      pinMode(pinB, OUTPUT);
-      pinMode(pinC, OUTPUT);
-      pinMode(pinD, OUTPUT);
-      pinMode(pinE, OUTPUT);
-      pinMode(pinF, OUTPUT);
-      pinMode(pinG, OUTPUT);
-	  pinMode(first, OUTPUT);
-	  pinMode(second, OUTPUT);
-	  pinMode(third, OUTPUT);
-	  pinMode(four, OUTPUT);
-      digitalWrite(pinA, LOW);
-      digitalWrite(pinB, LOW);
-      digitalWrite(pinC, LOW);
-      digitalWrite(pinD, LOW);
-      digitalWrite(pinE, LOW);
-      digitalWrite(pinF, LOW);
-      digitalWrite(pinG, LOW);
-	  digitalWrite(first, LOW);
-	  digitalWrite(second, LOW);
-	  digitalWrite(third, LOW);
-      digitalWrite(four, LOW);
-	  _pinA = pinA;
-      _pinB = pinB;
-      _pinC = pinC;
-      _pinD = pinD;
-      _pinE = pinE;
-      _pinF = pinF;
-      _pinG = pinG;
-	  _firstSeg = first;
-	  _secondSeg = second;
-	  _thirdSeg = third;
-	  _fourSeg = four;
+	void discharge(int first, int second, int third){
+		pinMode(first, OUTPUT);
+		digitalWrite(first, LOW);
+		_firstSeg = first;
+		pinMode(second, OUTPUT);
+		digitalWrite(second, LOW);
+		_secondSeg = second;
+		pinMode(third, OUTPUT);
+		digitalWrite(third, LOW);
+		_thirdSeg = third;
 	}
-    void one(){
+	void discharge(int first, int second, int third, int four){
+		pinMode(first, OUTPUT);
+		digitalWrite(first, LOW);
+		_firstSeg = first;
+		pinMode(second, OUTPUT);
+		digitalWrite(second, LOW);
+		_secondSeg = second;
+		pinMode(third, OUTPUT);
+		digitalWrite(third, LOW);
+		_thirdSeg = third;
+		pinMode(four, OUTPUT);
+		digitalWrite(four, LOW);
+		_fourSeg = four;
+	}
+	void one(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, LOW);
       digitalWrite(_pinB, HIGH);
       digitalWrite(_pinC, HIGH);
@@ -145,6 +94,14 @@ class Segmentor{
       digitalWrite(_pinG, LOW);
     }
     void two(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, HIGH);
       digitalWrite(_pinB, HIGH);
       digitalWrite(_pinC, LOW);
@@ -154,6 +111,14 @@ class Segmentor{
       digitalWrite(_pinG, HIGH);
     }
     void three(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, HIGH);
       digitalWrite(_pinB, HIGH);
       digitalWrite(_pinC, HIGH);
@@ -163,6 +128,14 @@ class Segmentor{
       digitalWrite(_pinG, HIGH);
     }
     void four(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, LOW);
       digitalWrite(_pinB, HIGH);
       digitalWrite(_pinC, HIGH);
@@ -172,6 +145,14 @@ class Segmentor{
       digitalWrite(_pinG, HIGH);
     }
     void five(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, HIGH);
       digitalWrite(_pinB, LOW);
       digitalWrite(_pinC, HIGH);
@@ -181,6 +162,14 @@ class Segmentor{
       digitalWrite(_pinG, HIGH);
     }
     void six(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, HIGH);
       digitalWrite(_pinB, LOW);
       digitalWrite(_pinC, HIGH);
@@ -190,6 +179,14 @@ class Segmentor{
       digitalWrite(_pinG, HIGH);
     }
     void seven(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, HIGH);
       digitalWrite(_pinB, HIGH);
       digitalWrite(_pinC, HIGH);
@@ -199,6 +196,14 @@ class Segmentor{
       digitalWrite(_pinG, LOW);
     }
     void eight(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, HIGH);
       digitalWrite(_pinB, HIGH);
       digitalWrite(_pinC, HIGH);
@@ -208,6 +213,14 @@ class Segmentor{
       digitalWrite(_pinG, HIGH);
     }
     void nine(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, HIGH);
       digitalWrite(_pinB, HIGH);
       digitalWrite(_pinC, HIGH);
@@ -217,6 +230,14 @@ class Segmentor{
       digitalWrite(_pinG, HIGH);
     }
     void zero(){
+	  digitalWrite(_pinA, LOW);
+      digitalWrite(_pinB, LOW);
+      digitalWrite(_pinC, LOW);
+      digitalWrite(_pinD, LOW);
+      digitalWrite(_pinE, LOW);
+      digitalWrite(_pinF, LOW);
+      digitalWrite(_pinG, LOW);
+	  delayMicroseconds(100);
       digitalWrite(_pinA, HIGH);
       digitalWrite(_pinB, HIGH);
       digitalWrite(_pinC, HIGH);
@@ -259,61 +280,61 @@ class Segmentor{
           break;   
       }
     }
-	displayOne(int value){
+	void displayOne(int value){
 		int firstNumber = value%10;
 		digitalWrite(_firstSeg, HIGH);
 		chooseNumber(firstNumber);
-		delay(7);
+		delay(5);
 		digitalWrite(_firstSeg, LOW);
 	}
-	displayTwo(int value){
+	void displayTwo(int value){
 		int firstNumber = value%10;
 		int secondNumber = value%100/10;
 		digitalWrite(_firstSeg, HIGH);
 		chooseNumber(firstNumber);
-		delay(7);
+		delay(5);
 		digitalWrite(_firstSeg, LOW);
 		digitalWrite(_secondSeg, HIGH);
 		chooseNumber(secondNumber);
-		delay(7);
+		delay(5);
 		digitalWrite(_secondSeg, LOW);
 	}
-	displayThree(int value){
+	void displayThree(int value){
 		int firstNumber = value%10;
 		int secondNumber = value%100/10;
 		int thirdNumber = value/100%10;
 		digitalWrite(_firstSeg, HIGH);
 		chooseNumber(firstNumber);
-		delay(7);
+		delay(5);
 		digitalWrite(_firstSeg, LOW);
 		digitalWrite(_secondSeg, HIGH);
 		chooseNumber(secondNumber);
-		delay(7);
+		delay(5);
 		digitalWrite(_secondSeg, LOW);
 		digitalWrite(_thirdSeg, HIGH);
 		chooseNumber(thirdNumber);
-		delay(7);
+		delay(5);
 		digitalWrite(_thirdSeg, LOW);
 	}
-	displayFour(int value){
+	void displayFour(int value){
 		int firstNumber = value%10;
 		int secondNumber = value%100/10;
 		int thirdNumber = value/100%10;
 		int fourNumber = value/1000%10;
 		digitalWrite(_firstSeg, HIGH);
 		chooseNumber(firstNumber);
-		delay(7);
+		delay(5);
 		digitalWrite(_firstSeg, LOW);
 		digitalWrite(_secondSeg, HIGH);
 		chooseNumber(secondNumber);
-		delay(7);
+		delay(5);
 		digitalWrite(_secondSeg, LOW);
 		digitalWrite(_thirdSeg, HIGH);
 		chooseNumber(thirdNumber);
-		delay(7);
+		delay(5);
 		digitalWrite(_thirdSeg, LOW);
 		digitalWrite(_fourSeg, HIGH);
 		chooseNumber(fourNumber);
-		delay(7);
+		delay(5);
 	}
 };
