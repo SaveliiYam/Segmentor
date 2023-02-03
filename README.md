@@ -35,6 +35,7 @@ void displayFour(value);// функция выводит подаваемое е
 
 ## Примеры
 ```cpp
+//3-х разрядный семисегментный индикатор с общм катодом
 #include <Segmentor.h> //library initialization
 Segmentor segment(2, 3, 4, 5, 6, 7, 8); //segmentor initialization
 
